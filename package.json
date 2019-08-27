@@ -2,6 +2,7 @@
   "name": "20190827-ts-node-server",
   "version": "0.0.0",
   "devDependencies": {
+    "@types/node": "^12.7.2",
     "fixpack": "^2.3.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2",
