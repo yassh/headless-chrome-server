@@ -2,10 +2,16 @@
   "name": "20190827-ts-node-server",
   "version": "0.0.0",
   "devDependencies": {
+    "fixpack": "^2.3.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.18.2",
     "ts-node-dev": "^1.0.0-pre.42",
     "typescript": "^3.5.3"
   },
   "scripts": {
-    "start": "ts-node-dev ./index.ts"
+    "fix": "npm-run-all -p fix:*",
+    "fix:pack": "fixpack",
+    "fix:ts": "prettier './src/**/*.ts' --write",
+    "start": "ts-node-dev ./src/index.ts"
   }
 }
