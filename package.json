@@ -6,13 +6,18 @@
     "fixpack": "^2.3.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2",
+    "rimraf": "^3.0.0",
     "ts-node-dev": "^1.0.0-pre.42",
     "typescript": "^3.5.3"
   },
   "scripts": {
+    "build": "tsc ./src/index.ts --outDir ./dist",
+    "clean": "rimraf ./dist",
     "dev": "ts-node-dev ./src/index.ts",
     "fix": "npm-run-all -p fix:*",
     "fix:pack": "fixpack",
-    "fix:ts": "prettier './src/**/*.ts' --write"
+    "fix:ts": "prettier './src/**/*.ts' --write",
+    "prestart": "npm-run-all clean build",
+    "start": "node ./dist/index.js"
   }
 }
