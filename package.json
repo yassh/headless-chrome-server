@@ -10,9 +10,9 @@
     "typescript": "^3.5.3"
   },
   "scripts": {
+    "dev": "ts-node-dev ./src/index.ts",
     "fix": "npm-run-all -p fix:*",
     "fix:pack": "fixpack",
-    "fix:ts": "prettier './src/**/*.ts' --write",
-    "start": "ts-node-dev ./src/index.ts"
+    "fix:ts": "prettier './src/**/*.ts' --write"
   }
 }
