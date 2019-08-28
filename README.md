@@ -29,3 +29,22 @@ yarn install
 ```
 curl http://localhost:8888/ --header "x-url: http://example.com/"
 ```
+
+UserScriptの例：
+
+```js
+// ==UserScript==
+// @name headless-chrome-serverにURLを送る
+// @version 1
+// @grant none
+// @match https://*.yahoo.co.jp/*
+// @match https://developer.mozilla.org/*
+// @match http://localhost:3000/*
+// ==/UserScript==
+
+fetch("http://localhost:8888/", {
+  headers: {
+    "x-url": location.href,
+  },
+})
+```
