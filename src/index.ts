@@ -8,9 +8,10 @@ async function main() {
   const page = await browser.newPage()
   await page.emulate(puppeteer.devices["iPhone X"])
 
-  function open(url: string) {
+  async function open(url: string) {
     console.log(`Open ${url}`)
-    page.goto(url)
+    await page.goto(url)
+    // await page.screenshot({ path: "screenshot.png" })
   }
 
   http
